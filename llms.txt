@@ -1,0 +1,45 @@
+# SplitLaunch
+
+> A/B testing your AI agent can install and run.
+
+SplitLaunch is package-first A/B testing for customer-owned websites and apps.
+It provides the `@splitlaunch/ab` package, `splitlaunch` CLI, browser pixel,
+external command API, conversion tracking, and experiment reporting.
+
+## Key URLs
+
+- Website: https://www.splitlaunch.dev
+- Live agent skills: https://www.splitlaunch.dev/api/skills
+- Install docs: https://www.splitlaunch.dev/docs/install
+- API docs: https://www.splitlaunch.dev/docs/api
+- Command endpoint: https://www.splitlaunch.dev/api/external/v1/commands
+
+## Important Docs
+
+- Agent command playbook: ./SKILLS.md
+- Quickstart: ./QUICKSTART.md
+- Projects and pixel IDs: ./skills/projects.md
+- Experiments: ./skills/experiments.md
+- Conversion tracking: ./skills/conversion-tracking.md
+- Reports: ./skills/reports.md
+- Runbooks: ./runbooks/README.md
+
+## Install
+
+```bash
+npm install @splitlaunch/ab
+npx splitlaunch init
+```
+
+## Command Envelope
+
+```json
+{
+  "command": "experiments.create",
+  "input": {}
+}
+```
+
+Use `Authorization: Bearer sl_live_...` for server, terminal, CI, and agent-side
+requests. Never put the private API key in browser code. Browser code only uses
+the public `px_...` pixel ID.
