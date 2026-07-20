@@ -1,45 +1,56 @@
 # SplitLaunch
 
-> A/B testing your AI agent can install and run.
+> Package-first A/B testing for customer-owned pages that AI agents can install, configure, run, and report on.
 
-SplitLaunch is package-first A/B testing for customer-owned websites and apps.
-It provides the `@splitlaunch/ab` package, `splitlaunch` CLI, browser pixel,
-external command API, conversion tracking, and experiment reporting.
+SplitLaunch is an A/B testing platform for teams that keep their own website.
+It provides the browser package, pixel, external command API, agent skills,
+redirect and assignment logic, conversion tracking, and reporting API.
 
 ## Key URLs
 
 - Website: https://www.splitlaunch.dev
 - Live agent skills: https://www.splitlaunch.dev/api/skills
+- API skills endpoint: https://www.splitlaunch.dev/api/external/v1/skills
+- API command endpoint: https://www.splitlaunch.dev/api/external/v1/commands
 - Install docs: https://www.splitlaunch.dev/docs/install
 - API docs: https://www.splitlaunch.dev/docs/api
-- Command endpoint: https://www.splitlaunch.dev/api/external/v1/commands
 
 ## Important Docs
 
-- Agent command playbook: ./SKILLS.md
-- Quickstart: ./QUICKSTART.md
-- Projects and pixel IDs: ./skills/projects.md
-- Experiments: ./skills/experiments.md
-- Conversion tracking: ./skills/conversion-tracking.md
-- Reports: ./skills/reports.md
-- Runbooks: ./runbooks/README.md
-
-## Install
-
-```bash
-npm install @splitlaunch/ab
-npx splitlaunch init
-```
+- Agent operating manual: /api/skills
+- API skills file: /api/external/v1/skills
+- Install guide: /docs/install
+- API command guide: /docs/api
+- NPM package: @splitlaunch/ab
 
 ## Command Envelope
 
-```json
 {
   "command": "experiments.create",
   "input": {}
 }
-```
 
-Use `Authorization: Bearer sl_live_...` for server, terminal, CI, and agent-side
-requests. Never put the private API key in browser code. Browser code only uses
-the public `px_...` pixel ID.
+POST https://www.splitlaunch.dev/api/external/v1/commands
+Authorization: Bearer sl_live_...
+Content-Type: application/json
+
+## What Agents Can Do
+
+- Create and select projects, each with its own public pixel ID.
+- Add allowed customer-owned domains before launching redirecting tests.
+- Install @splitlaunch/ab and retrieve the public pixel ID through the CLI.
+- Create, update, list, launch, pause, and end URL-based A/B experiments.
+- Configure control URLs, variation URLs, traffic allocation, targeting,
+  URL pattern rules, and redirect parameter preservation.
+- Create and list conversion goals fired by the browser pixel.
+- Pull experiment details, charts, acquisition channels, and usage summaries.
+- Open the billing portal for subscription management.
+
+## Agent Safety Rules
+
+- Never put a private API key in browser code.
+- Browser code only receives the public pixel ID, for example px_abc123.
+- Use the private API key only in terminal, server, CI, or agent-side calls.
+- Prefer creating experiments in draft, then verify URLs, domains, and goals
+  before setting the experiment to running.
+- Use projectId when the account has multiple projects.
