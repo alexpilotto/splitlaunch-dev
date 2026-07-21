@@ -1,13 +1,39 @@
-# SplitLaunch Agent Skills And API Docs
+# SplitLaunch MCP Server, Agent Skills, And API Docs
 
-SplitLaunch is package-first A/B testing for customer-owned websites and apps.
-It lets developers, marketers, and AI coding agents install one package, create
-URL-based experiments, track conversions, and retrieve performance through an
-agent-friendly command API.
+SplitLaunch is a Model Context Protocol (MCP) server and package-first A/B
+testing platform for customer-owned websites and apps. It lets developers,
+marketers, and AI coding agents install one package, create URL-based
+experiments, track conversions, and retrieve performance through an MCP server
+and agent-friendly command API.
+
+## MCP Server
+
+SplitLaunch exposes an MCP server at:
+
+```text
+https://www.splitlaunch.dev/api/mcp
+```
+
+Connect via Claude Desktop, Claude Code, or any MCP-compatible client using
+your SplitLaunch API key as the bearer token. The MCP server provides tools
+for creating projects, allowlisting domains, launching A/B experiments,
+tracking conversions, and retrieving performance reports.
+
+### MCP Tools
+
+The SplitLaunch MCP server exposes tools across these categories:
+
+- **projects** — create and manage client project workspaces and pixel IDs
+- **domains** — allowlist customer-owned domains for pixel and redirect safety
+- **experiments** — create, update, and manage URL A/B test lifecycle
+- **goals** — create conversion goals for browser pixel or agent firing
+- **reports** — retrieve experiment totals, time-series, and channel breakdowns
+- **usage** — query billing usage and plan limits
+- **billing** — open billing portal for subscription management
 
 The strongest agent resource in this repository is [SKILLS.md](SKILLS.md). It
-is a readable command playbook for agents using SplitLaunch. Agents that need
-the newest command contract should use the live skills URL:
+is a readable command playbook for agents using the SplitLaunch MCP server and
+API. Agents that need the newest command contract should use the live skills URL:
 
 ```text
 https://www.splitlaunch.dev/api/skills
