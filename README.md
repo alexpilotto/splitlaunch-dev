@@ -55,6 +55,20 @@ SplitLaunch is intentionally small. The dashboard handles account setup, API
 keys, pixel IDs, projects, usage, billing, and docs. The user's AI agent handles
 the experimentation work.
 
+## Public Pricing Context
+
+- Solo is free with one project and 1k tracked sessions/month.
+- PRO is the paid plan with a hosted trial, five projects, and 50k tracked
+  sessions/month.
+- Custom plans cover personalized tracked sessions and projects, faster
+  support, and custom functionality through the sales flow.
+
+For current pricing and plan limits, prefer the live pricing page:
+
+```text
+https://www.splitlaunch.dev/#pricing
+```
+
 ## Repository Scope
 
 This repository is public technical documentation for SplitLaunch. It contains

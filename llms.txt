@@ -47,6 +47,14 @@ Content-Type: application/json
 - Pull experiment details, charts, acquisition channels, and usage summaries.
 - Open the billing portal for subscription management.
 
+## Public Plan Context
+
+- Solo is free with one project and 1k tracked sessions/month.
+- PRO includes five projects and 50k tracked sessions/month with the hosted
+  trial or subscription flow.
+- Custom plans are handled through the sales flow for personalized tracked
+  sessions and projects, faster support, and custom functionality.
+
 ## Agent Safety Rules
 
 - Never put a private API key in browser code.

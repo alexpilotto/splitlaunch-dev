@@ -47,8 +47,11 @@ change plan, or view subscription information.
 
 Current public positioning:
 
-- Solo: one project and a lower tracked-session allowance.
-- PRO: unlimited projects and a higher tracked-session allowance.
+- Solo: free, one project, and 1k tracked sessions/month.
+- PRO: paid plan with a hosted trial, five projects, and 50k tracked
+  sessions/month.
+- Custom plan: personalized tracked sessions and projects, faster support, and
+  custom functionality via the sales flow.
 
 Always prefer the live website for current pricing and plan limits:
 

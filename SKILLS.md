@@ -140,7 +140,8 @@ For every action:
 User-facing setup:
 
 1. User creates a SplitLaunch account and opens the dashboard.
-2. User activates the trial or subscription before the first experiment runs.
+2. Solo can run immediately within the free plan limits. Pro users activate
+   the trial or subscription before the first experiment runs.
 3. User copies the account API key.
 4. In the user's website or app repository, the user or agent runs:
 

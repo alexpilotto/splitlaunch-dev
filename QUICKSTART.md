@@ -13,8 +13,9 @@ https://www.splitlaunch.dev/api/skills
 
 ## 1. Get An API Key
 
-Create a SplitLaunch account, activate the trial or subscription, and copy an
-API key from the dashboard.
+Create a SplitLaunch account and copy an API key from the dashboard. Solo
+starts free within the public plan limits; Pro uses the hosted trial or
+subscription flow.
 
 API keys use the `sl_live_` prefix. Keep them secret.
 
