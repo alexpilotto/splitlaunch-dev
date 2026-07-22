@@ -3,12 +3,13 @@
 > Package-first A/B testing for customer-owned pages that AI agents can install, configure, run, and report on.
 
 SplitLaunch is an A/B testing platform for teams that keep their own website.
-It provides the browser package, pixel, external command API, agent skills,
-redirect and assignment logic, conversion tracking, and reporting API.
+It provides the browser package, pixel, MCP server, external command API, agent
+skills, redirect and assignment logic, conversion tracking, and reporting API.
 
 ## Key URLs
 
 - Website: https://www.splitlaunch.dev
+- MCP server endpoint: https://www.splitlaunch.dev/api/mcp
 - Live agent skills: https://www.splitlaunch.dev/api/skills
 - API skills endpoint: https://www.splitlaunch.dev/api/external/v1/skills
 - API command endpoint: https://www.splitlaunch.dev/api/external/v1/commands

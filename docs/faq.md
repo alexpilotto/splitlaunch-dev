@@ -70,5 +70,8 @@ up to 365 days.
 
 ## Is There An MCP Endpoint?
 
-SplitLaunch v1 is built around API-key command calls and a live skills page.
-Use `https://www.splitlaunch.dev/api/skills` as the agent command playbook.
+Yes. SplitLaunch exposes a hosted MCP endpoint at
+`https://www.splitlaunch.dev/api/mcp`.
+
+Use `https://www.splitlaunch.dev/api/skills` as the live agent command
+playbook.
