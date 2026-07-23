@@ -8,6 +8,7 @@ successful user actions.
 
 - `goals.create`: create or reactivate a conversion goal.
 - `goals.list`: list goals for a project.
+- `goals.deactivate`: deactivate a goal while keeping historical events.
 - `reports.experiment.details`: inspect conversion totals.
 - `reports.experiment.channels`: inspect conversions by acquisition channel.
 
@@ -42,6 +43,21 @@ and marks it active.
   }
 }
 ```
+
+## Deactivate A Goal
+
+```json
+{
+  "command": "goals.deactivate",
+  "input": {
+    "projectId": "PROJECT_ID",
+    "eventName": "Lead"
+  }
+}
+```
+
+You can also pass `goalId` instead of `eventName` when the exact goal ID is
+known.
 
 ## Fire A Browser Event
 
