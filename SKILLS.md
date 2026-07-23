@@ -310,6 +310,21 @@ Input:
 Confirm before changing attribution settings because future report
 interpretation depends on them.
 
+#### `projects.archive`
+
+Archive a project so its pixel stops serving experiments and accepting new
+events while historical usage and reports remain available.
+
+Mode: write
+
+Input:
+
+```json
+{
+  "projectId": "PROJECT_ID"
+}
+```
+
 ### Domains
 
 #### `domains.list`
@@ -347,6 +362,23 @@ Rules:
 - Add both apex and subdomain if both are used.
 - Add every hostname used by control and variation URLs.
 - Do not add domains the user does not control.
+
+#### `domains.remove`
+
+Remove a customer-owned domain from a project's whitelist.
+
+Mode: write
+
+Input:
+
+```json
+{
+  "projectId": "PROJECT_ID",
+  "hostname": "example.com"
+}
+```
+
+Removing a domain stops future pixel loads and redirects from that hostname.
 
 ### Experiments
 
@@ -387,6 +419,22 @@ Recommended checklist:
 8. Create the experiment.
 9. Keep it in draft until launch approval.
 10. Set status to `running`.
+
+#### `experiments.get`
+
+Return one experiment by ID, including status, URLs, allocation, targeting, URL
+pattern rules, and timestamps.
+
+Mode: read-only
+
+Input:
+
+```json
+{
+  "projectId": "PROJECT_ID",
+  "experimentId": "EXPERIMENT_ID"
+}
+```
 
 #### `experiments.update`
 
@@ -430,6 +478,22 @@ Input:
 
 Agents should explicitly confirm before setting status to `running`, `paused`,
 or `ended`.
+
+#### `experiments.archive`
+
+Archive an experiment by ending it while keeping exposures, conversion events,
+and reports available.
+
+Mode: write
+
+Input:
+
+```json
+{
+  "projectId": "PROJECT_ID",
+  "experimentId": "EXPERIMENT_ID"
+}
+```
 
 #### `experiments.list`
 
@@ -566,6 +630,22 @@ Input:
 {
   "projectId": "PROJECT_ID",
   "active": true
+}
+```
+
+#### `goals.deactivate`
+
+Deactivate a conversion goal by goal ID or event name while keeping historical
+reporting data.
+
+Mode: write
+
+Input:
+
+```json
+{
+  "projectId": "PROJECT_ID",
+  "eventName": "Lead"
 }
 ```
 
