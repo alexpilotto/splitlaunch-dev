@@ -26,6 +26,9 @@ writes local setup config, and prints the browser snippet.
 
 ## Create A Goal
 
+Revenue values require Free, Plus, or Pro. On Go, omit `value` and track the
+conversion count only.
+
 ```json
 {
   "command": "goals.create",
@@ -60,7 +63,7 @@ conversion.
 
 ## Useful Metadata
 
-For revenue:
+For revenue on plans that include revenue tracking:
 
 ```js
 window.splitlaunch("track", "Purchase", {

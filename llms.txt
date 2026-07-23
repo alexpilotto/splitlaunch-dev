@@ -39,6 +39,8 @@ Content-Type: application/json
 
 - Create and select projects, each with its own public pixel ID.
 - Add allowed customer-owned domains before launching redirecting tests.
+- Archive projects, archive experiments, remove domains, and deactivate goals
+  while keeping historical data.
 - Install @splitlaunch/ab and retrieve the public pixel ID through the CLI.
 - Create, update, list, launch, pause, and end URL-based A/B experiments.
 - Configure control URLs, variation URLs, traffic allocation, targeting,
@@ -49,11 +51,15 @@ Content-Type: application/json
 
 ## Public Plan Context
 
-- Solo is free with one project and 1k tracked sessions/month.
-- PRO includes five projects and 50k tracked sessions/month with the hosted
-  trial or subscription flow.
-- Custom plans are handled through the sales flow for personalized tracked
-  sessions and projects, faster support, and custom functionality.
+- Free includes the first project and 10,000 one-off tracked sessions.
+- Go is $13/month per additional project with 20,000 sessions/month, URL A/B
+  testing, conversion tracking, domain whitelisting, MCP, and API access.
+- Plus is $30/month per additional project with 50,000 sessions/month, plus geo
+  targeting, traffic-source filters, and revenue tracking.
+- Pro is $99/month per additional project with 250,000 sessions/month, plus URL
+  pattern rules and custom feature support.
+- Custom support is handled through the sales flow for more volume, faster
+  support, or custom functionality.
 
 ## Agent Safety Rules
 

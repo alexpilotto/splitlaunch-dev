@@ -5,10 +5,10 @@ controls. Agents should verify domain allowlisting before launching experiments.
 
 ## Core Commands
 
-- `domains.list`: list allowed domains for a project.
+- `domains.list`: list whitelisted domains for a project.
 - `domains.add`: add a customer-owned hostname.
-- `projects.get`: read the project's current allowed domain list.
-- `projects.update`: replace the project's allowed domain list when needed.
+- `projects.get`: read the project's current domain whitelist.
+- `projects.update`: replace the project's domain whitelist when needed.
 
 ## List Domains
 

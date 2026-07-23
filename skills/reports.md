@@ -46,7 +46,7 @@ Explain:
 - exposures,
 - visitors,
 - conversions,
-- revenue,
+- revenue when available,
 - conversion rate,
 - absolute difference,
 - relative lift,
@@ -94,7 +94,7 @@ Rows can include:
 - exposures,
 - visitors,
 - conversions,
-- revenue,
+- revenue when available,
 - conversion rate.
 
 ## Agent Reporting Pattern

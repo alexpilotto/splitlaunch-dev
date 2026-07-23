@@ -13,6 +13,9 @@ successful user actions.
 
 ## Create A Goal
 
+Revenue values require Free, Plus, or Pro. On Go, omit `value` and track the
+conversion count only.
+
 ```json
 {
   "command": "goals.create",
@@ -62,7 +65,8 @@ Common event names:
 
 ## Revenue Events
 
-For purchases or subscriptions, include value and currency when available:
+For purchases or subscriptions, include value and currency when available and
+the plan includes revenue tracking:
 
 ```js
 window.splitlaunch("track", "Purchase", {
@@ -109,7 +113,8 @@ when a conversion event arrives without explicit experiment fields.
 1. Ask what action counts as a conversion.
 2. Create or confirm the matching goal.
 3. Add the browser event after the successful action.
-4. Include `value` and `currency` for revenue events.
+4. Include `value` and `currency` for revenue events only when the plan includes
+   revenue tracking.
 5. Avoid duplicate firing on retries or validation errors.
 6. Pull experiment reports after traffic accrues.
 

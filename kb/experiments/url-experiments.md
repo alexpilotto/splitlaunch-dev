@@ -68,6 +68,8 @@ Use a URL experiment when the user wants to test:
 }
 ```
 
+This combined traffic-source and geo targeting example requires Plus or Pro.
+
 ## Before Launch Checklist
 
 1. Confirm the project.

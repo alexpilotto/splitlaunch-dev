@@ -13,9 +13,9 @@ https://www.splitlaunch.dev/api/skills
 
 ## 1. Get An API Key
 
-Create a SplitLaunch account and copy an API key from the dashboard. Solo
-starts free within the public plan limits; Pro uses the hosted trial or
-subscription flow.
+Create a SplitLaunch account and copy an API key from the dashboard. The first
+project starts free within the public plan limits; Go, Plus, and Pro use the
+hosted trial or subscription flow.
 
 API keys use the `sl_live_` prefix. Keep them secret.
 
@@ -76,7 +76,7 @@ curl -X POST "https://www.splitlaunch.dev/api/external/v1/commands" \
   }'
 ```
 
-The response includes the project, public pixel ID, allowed domains, attribution
+The response includes the project, public pixel ID, whitelisted domains, attribution
 settings, and plan context.
 
 ## 5. Allowlist Domains
@@ -117,6 +117,9 @@ Agents may send `50` or `0.5`; both represent 50%.
 
 ## 7. Create A Goal And Fire Events
 
+Revenue values require Free, Plus, or Pro. On Go, omit `value` and track the
+conversion count only.
+
 ```json
 {
   "command": "goals.create",
@@ -140,7 +143,7 @@ window.splitlaunch("track", "Lead", {
 
 ## 8. Launch After Confirmation
 
-Confirm the URLs, allowed domains, goal, and allocation with the operator, then
+Confirm the URLs, whitelisted domains, goal, and allocation with the operator, then
 set the experiment to `running`:
 
 ```json
@@ -181,8 +184,8 @@ For acquisition and channel context:
 ```
 
 Agents should explain sample size, exposure count, visitors, conversions,
-conversion rate by variant, absolute difference, relative lift, revenue, channel
-skew, and whether more data is needed.
+conversion rate by variant, absolute difference, relative lift, revenue when
+available, channel skew, and whether more data is needed.
 
 ## Next Files
 

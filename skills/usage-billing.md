@@ -47,11 +47,15 @@ change plan, or view subscription information.
 
 Current public positioning:
 
-- Solo: free, one project, and 1k tracked sessions/month.
-- PRO: paid plan with a hosted trial, five projects, and 50k tracked
-  sessions/month.
-- Custom plan: personalized tracked sessions and projects, faster support, and
-  custom functionality via the sales flow.
+- Free: first project and 10,000 one-off tracked sessions.
+- Go: $13/month per additional project, 20,000 sessions/month, URL A/B
+  testing, conversion tracking, domain whitelisting, MCP, and API access.
+- Plus: $30/month per additional project, 50,000 sessions/month, geo
+  targeting, traffic-source filters, and revenue tracking.
+- Pro: $99/month per additional project, 250,000 sessions/month, URL pattern
+  rules, and custom feature support.
+- Custom: more volume, faster support, or custom functionality via the sales
+  flow.
 
 Always prefer the live website for current pricing and plan limits:
 

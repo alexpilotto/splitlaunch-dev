@@ -57,11 +57,15 @@ the experimentation work.
 
 ## Public Pricing Context
 
-- Solo is free with one project and 1k tracked sessions/month.
-- PRO is the paid plan with a hosted trial, five projects, and 50k tracked
-  sessions/month.
-- Custom plans cover personalized tracked sessions and projects, faster
-  support, and custom functionality through the sales flow.
+- Free includes the first project and 10,000 one-off tracked sessions.
+- Go is $13/month per additional project with 20,000 sessions/month, URL A/B
+  testing, conversion tracking, domain whitelisting, MCP, and API access.
+- Plus is $30/month per additional project with 50,000 sessions/month, plus geo
+  targeting, traffic-source filters, and revenue tracking.
+- Pro is $99/month per additional project with 250,000 sessions/month, plus URL
+  pattern rules and custom feature support.
+- Custom support covers more volume, faster support, or custom functionality
+  through the sales flow.
 
 For current pricing and plan limits, prefer the live pricing page:
 
@@ -157,12 +161,13 @@ All API-key commands use this envelope:
 
 High-value command families include:
 
-- `projects.*` for projects, public pixel IDs, allowed domains, and attribution
-  settings.
-- `domains.*` for allowlisting customer-owned domains before redirect tests.
+- `projects.*` for projects, public pixel IDs, whitelisted domains, and attribution
+  settings, including project archiving.
+- `domains.*` for allowlisting or removing customer-owned domains before
+  redirect tests.
 - `experiments.*` for URL A/B test creation, updates, lifecycle changes, and
-  listing.
-- `goals.*` for conversion goals that browser code can fire.
+  listing, including single-experiment reads and archiving.
+- `goals.*` for conversion goals that browser code can fire or deactivate.
 - `reports.experiment.*` for totals, time series, channel breakdowns, lift, and
   revenue context.
 - `usage.summary` and `billing.portal` for plan usage and subscription

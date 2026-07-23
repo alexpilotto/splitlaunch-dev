@@ -32,7 +32,7 @@ SplitLaunch is not a visual page builder, a large analytics dashboard, or a
 feature-flag platform.
 
 The dashboard is intentionally small. It handles API keys, pixel IDs, projects,
-allowed domains, usage, billing, and docs. Experiments are created and analysed
+whitelisted domains, usage, billing, and docs. Experiments are created and analysed
 through the API or by the user's AI agent.
 
 ## Why Agents Use SplitLaunch
@@ -58,7 +58,7 @@ predictable envelope:
 
 ## Core Command Families
 
-- `projects.*` manages projects, public pixel IDs, allowed domains, and
+- `projects.*` manages projects, public pixel IDs, whitelisted domains, and
   attribution settings.
 - `domains.*` manages domain allowlisting.
 - `experiments.*` creates and manages URL tests.

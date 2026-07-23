@@ -7,9 +7,11 @@ exposure tracking, and report retrieval.
 ## Core Commands
 
 - `experiments.create`: create a draft URL A/B test.
+- `experiments.get`: inspect one experiment by ID.
 - `experiments.update`: update mutable experiment settings.
 - `experiments.set_status`: move an experiment through `draft`, `running`,
   `paused`, and `ended`.
+- `experiments.archive`: end an experiment while keeping historical reports.
 - `experiments.list`: list experiments for a project.
 - `reports.experiment.details`: read experiment totals.
 - `reports.experiment.chart`: read time-series performance.
@@ -34,7 +36,29 @@ exposure tracking, and report retrieval.
 `trafficAllocation` means the percentage of eligible visitors assigned to the
 variation URL. Agents may send `50` or `0.5`; both represent 50%.
 
+## Get An Experiment
+
+```json
+{
+  "command": "experiments.get",
+  "input": {
+    "projectId": "PROJECT_ID",
+    "experimentId": "EXPERIMENT_ID"
+  }
+}
+```
+
+Use this before updating or archiving a specific experiment.
+
 ## Targeting Fields
+
+Plan gates:
+
+- Go supports standard URL A/B testing and conversions, but not geo targeting,
+  traffic-source filters, or URL pattern rules.
+- Plus supports geo targeting and traffic-source filters, but not URL pattern
+  rules.
+- Pro supports all targeting, including URL pattern rules.
 
 Device targeting:
 
@@ -58,6 +82,8 @@ Visitor targeting:
 
 Traffic source filters:
 
+Requires Plus or Pro.
+
 ```json
 {
   "targeting": {
@@ -71,6 +97,8 @@ Traffic source filters:
 ```
 
 Geo filters:
+
+Requires Plus or Pro.
 
 ```json
 {
@@ -88,7 +116,8 @@ Geo filters:
 
 ## URL Pattern Rules
 
-Use URL pattern rules when one experiment should match multiple paths.
+Requires Pro. Use URL pattern rules when one experiment should match multiple
+paths.
 
 ```json
 {
@@ -119,6 +148,21 @@ Supported operators:
 - `contains`
 - `starts_with`
 - `ends_with`
+
+## Archive An Experiment
+
+```json
+{
+  "command": "experiments.archive",
+  "input": {
+    "projectId": "PROJECT_ID",
+    "experimentId": "EXPERIMENT_ID"
+  }
+}
+```
+
+Archiving ends the experiment and keeps exposures, conversion events, and
+reports available.
 
 ## Update An Experiment
 

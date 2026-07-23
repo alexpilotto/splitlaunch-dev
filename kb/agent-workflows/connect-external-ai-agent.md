@@ -45,7 +45,7 @@ Agents can:
 - list projects,
 - create projects,
 - retrieve public pixel IDs,
-- add allowed domains,
+- add domains to the whitelist,
 - create draft experiments,
 - launch, pause, or end experiments after confirmation,
 - create conversion goals,

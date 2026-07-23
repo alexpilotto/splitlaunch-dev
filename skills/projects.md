@@ -8,10 +8,12 @@ project before installing the pixel or creating an experiment.
 
 - `projects.create`: create a project and allocate a public pixel ID.
 - `projects.list`: list projects available to the API key.
-- `projects.get`: inspect one project, its pixel ID, allowed domains, and
+- `projects.get`: inspect one project, its pixel ID, whitelisted domains, and
   attribution settings.
-- `projects.update`: rename a project, replace allowed domains, or update
+- `projects.update`: rename a project, replace the domain whitelist, or update
   attribution settings.
+- `projects.archive`: archive a project so its pixel stops serving experiments
+  while historical usage and reports remain available.
 
 ## List Projects
 
@@ -89,6 +91,20 @@ Attribution guidance:
 - Short-cycle ecommerce tests usually use 3 to 7 days and `last_touch`.
 - Lead-gen, local service, SaaS, or B2B projects may need 30 to 90 days.
 
+## Archive A Project
+
+```json
+{
+  "command": "projects.archive",
+  "input": {
+    "projectId": "PROJECT_ID"
+  }
+}
+```
+
+Archiving a project stops its pixel from serving experiments or accepting new
+events. Historical usage and reports remain available.
+
 ## Install For A Project
 
 ```bash
@@ -101,7 +117,7 @@ The CLI retrieves that project's public pixel ID and writes local setup config.
 
 1. Run `projects.list` when the project is ambiguous.
 2. Run `projects.get` before installing or creating tests.
-3. Verify allowed domains before experiments.
+3. Verify whitelisted domains before experiments.
 4. Use `projectId` on all write commands for multi-project accounts.
 5. Confirm with the user before attribution changes.
 

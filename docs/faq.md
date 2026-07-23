@@ -27,7 +27,8 @@ SplitLaunch v1 tests existing URLs. A typical experiment has:
 - a control URL,
 - a variation URL,
 - traffic allocation,
-- optional device, visitor, traffic source, geo, and URL pattern targeting,
+- optional device, visitor, traffic-source, geo, and URL pattern targeting when
+  the selected plan includes those features,
 - a lifecycle status such as `draft`, `running`, `paused`, or `ended`.
 
 ## Does SplitLaunch Include A Visual Editor?
@@ -55,7 +56,7 @@ full URLs.
 Use:
 
 - `reports.experiment.details` for variant totals, visitors, exposures,
-  conversions, revenue, and conversion rate.
+  conversions, revenue when available, and conversion rate.
 - `reports.experiment.chart` for time-series performance.
 - `reports.experiment.channels` for acquisition and channel breakdowns.
 

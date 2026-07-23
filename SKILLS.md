@@ -73,10 +73,10 @@ project and cannot create new projects.
 
 Allowed actions:
 
-- Read project setup, pixel IDs, allowed domains, goals, experiments, reports,
+- Read project setup, pixel IDs, whitelisted domains, goals, experiments, reports,
   usage, and billing portal links.
 - Create projects when the API key and plan allow it.
-- Add allowed domains.
+- Add domains to the whitelist.
 - Create and update URL experiments.
 - Move experiments through `draft`, `running`, `paused`, and `ended`.
 - Create conversion goals.
@@ -117,7 +117,7 @@ Blocked actions:
 Resolve IDs before write commands. Do not guess IDs from display names.
 
 1. Run `projects.list` to find the right `projectId` and `pixelId`.
-2. Run `projects.get` to inspect allowed domains and attribution settings.
+2. Run `projects.get` to inspect whitelisted domains and attribution settings.
 3. Run `domains.list` to verify domain allowlisting.
 4. Run `goals.list` to find existing conversion goals.
 5. Run `experiments.list` to find current experiment IDs.
@@ -135,13 +135,27 @@ For every action:
 6. For write commands, read the resource back or list related resources.
 7. Explain the result in plain language.
 
+## Plan Gates
+
+- Free includes the first project, all platform features, and 10,000 one-off
+  tracked sessions. No credit card is required.
+- Go is for additional projects with URL A/B testing, conversion tracking,
+  domain whitelisting, MCP access, and API access. Do not use geo targeting,
+  traffic-source filters, URL pattern rules, or revenue values on Go.
+- Plus adds geo targeting, traffic-source filters, and revenue tracking. Do not
+  use URL pattern rules on Plus.
+- Pro adds URL pattern rules and custom feature support.
+- When revenue tracking is not included, omit monetary `value`, `revenue`,
+  `amount`, `price`, and `currency` fields. SplitLaunch records the conversion
+  count but ignores revenue metadata.
+
 ## Installation Flow
 
 User-facing setup:
 
 1. User creates a SplitLaunch account and opens the dashboard.
-2. Solo can run immediately within the free plan limits. Pro users activate
-   the trial or subscription before the first experiment runs.
+2. Free projects can run immediately within the included limits. Go, Plus, and
+   Pro projects use Stripe checkout before running as paid additional projects.
 3. User copies the account API key.
 4. In the user's website or app repository, the user or agent runs:
 
@@ -259,7 +273,7 @@ Use this first when the user mentions a client, site, or project by name.
 
 #### `projects.get`
 
-Return the current or requested project, public pixel ID, allowed domains,
+Return the current or requested project, public pixel ID, whitelisted domains,
 attribution settings, and plan context.
 
 Mode: read-only
@@ -277,7 +291,7 @@ project-scoped key returns its assigned project.
 
 #### `projects.update`
 
-Update project name, allowed domains, attribution window, or attribution model.
+Update project name, domain whitelist, attribution window, or attribution model.
 
 Mode: write
 
@@ -366,7 +380,7 @@ Recommended checklist:
 1. Confirm project.
 2. Confirm control URL.
 3. Confirm variation URL.
-4. Add or verify allowed domains.
+4. Add or verify whitelisted domains.
 5. Decide traffic allocation.
 6. Decide targeting filters.
 7. Decide conversion goal event names.
@@ -458,6 +472,8 @@ Visitor targeting:
 
 Traffic source targeting:
 
+Requires Plus or Pro.
+
 ```json
 {
   "targeting": {
@@ -470,6 +486,8 @@ Traffic source targeting:
 ```
 
 Geo targeting:
+
+Requires Plus or Pro.
 
 ```json
 {
@@ -486,6 +504,8 @@ Geo targeting:
 ```
 
 URL pattern rules:
+
+Requires Pro.
 
 ```json
 {
@@ -514,6 +534,9 @@ Supported URL pattern operators:
 #### `goals.create`
 
 Create a conversion goal that can be fired by the browser pixel.
+
+Revenue values require Free, Plus, or Pro. On Go, omit `value` and track the
+conversion count only.
 
 Mode: write
 
@@ -572,7 +595,8 @@ Agent guidance:
 
 - Track form conversions after successful submission.
 - Track purchases after confirmed checkout or payment success.
-- Include `value` and `currency` when revenue matters.
+- Include `value` and `currency` when revenue matters and the plan includes
+  revenue tracking.
 - Use stable event names that match goals.
 
 ### Reports
@@ -700,7 +724,7 @@ Use this only when the user asks to manage billing.
 ### Onboard A New Project
 
 1. Create or select the project.
-2. Add allowed domains.
+2. Add domains to the whitelist.
 3. Install the package in the customer repository.
 4. Wire the pixel snippet.
 5. Create the first conversion goal.
